@@ -1,20 +1,31 @@
 const mongoose = require('mongoose');
-const MaxDate = require('../models_and_schemas/MaxDateModel');
 const HSchema = require('../models_and_schemas/HistoricalSchema');
 const Apple = mongoose.model('Appleprice', HSchema);
 const Micorsoft = mongoose.model('Microsoftprice', HSchema);
 const Cisco = mongoose.model('Ciscoprice', HSchema);
 const StarBucks = mongoose.model('StarBucksprice', HSchema);
 
+/*
+method: post
+body : {
+    company: <name>
+    frm: <from date (%y-%m-%d)>
+    to: <to date (%y-%m-%d)>
+}
+*/
+
 exports.between_dates = async function (req, res) {
     console.log(req.body);
     try {
-        const searchObj = {
-            Date: {
-                $gt: req.body.frm,
-                $lt: req.body.to
-            }
-        };
+        let searchObj = null;
+        if (req.body.frm && req.body.to) {
+            searchObj = {
+                Date: {
+                    $gt: req.body.frm,
+                    $lt: req.body.to
+                }
+            };
+        }
         if (req.body.company === 'apple') {
             const results = await Apple.find(searchObj);
             res.status(200).json({

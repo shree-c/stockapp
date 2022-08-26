@@ -5,9 +5,7 @@ const Apple = mongoose.model('Appleprice', HSchema);
 const Micorsoft = mongoose.model('Microsoftprice', HSchema);
 const Cisco = mongoose.model('Ciscoprice', HSchema);
 const StarBucks = mongoose.model('StarBucksprice', HSchema);
-const MaxDate = require('./models_and_schemas/MaxDateModel');
 connect_db().then(async () => {
-    await MaxDate.deleteMany();
     console.log('deleted all max dates');
     await Apple.deleteMany();
     console.log('deleted apple');
@@ -20,4 +18,5 @@ connect_db().then(async () => {
 
     await StarBucks.deleteMany();
     console.log('deleted starbucks');
+    await mongoose.connection.close();
 });

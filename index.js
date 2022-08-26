@@ -33,7 +33,7 @@ const PORT = process.env.PORT || 5000;
     });
 })();
 
-process.on('SIGINT', async () => {
+process.on('SIGINT' || 'SIGTERM', async () => {
     mongoose.connection.close().then(() => {
         console.log('server closed');
         process.exit(1);
