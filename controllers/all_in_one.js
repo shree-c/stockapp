@@ -27,25 +27,25 @@ exports.between_dates = async function (req, res) {
             };
         }
         if (req.body.company === 'apple') {
-            const results = await Apple.find(searchObj);
+            const results = await Apple.find(searchObj).sort('Date');
             res.status(200).json({
                 success: true,
                 data: results
             });
         } else if (req.body.company === 'microsoft') {
-            const results = await Micorsoft.find(searchObj);
+            const results = await Micorsoft.find(searchObj).sort('Date');
             res.status(200).json({
                 success: true,
                 data: results
             });
         } else if (req.body.company === 'cisco') {
-            const results = await Cisco.find(searchObj);
+            const results = await Cisco.find(searchObj).sort('Date');
             res.status(200).json({
                 success: true,
                 data: results
             });
         } else if (req.body.company === 'starbucks') {
-            const results = await StarBucks.find(searchObj);
+            const results = await StarBucks.find(searchObj).sort('Date');
             res.status(200).json({
                 success: true,
                 data: results
