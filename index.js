@@ -1,12 +1,23 @@
 const express = require('express');
+const { default: mongoose } = require('mongoose');
 const app = express();
+const router = require('./router');
+const path = require('path');
 require('colors');
 const { connection, connect_db } = require('./db');
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
-
+app.use(express.static('public'));
+app.use('/api/v1/', router);
+app.get('/csv', (req, res) => {
+    res.format({
+        text: () => {
+            res.sendFile(path.join(__dirname, '/public/apple1y.csv'));
+        }
+    });
+});
 const PORT = process.env.PORT || 5000;
 (async function () {
     await connect_db();
@@ -22,9 +33,8 @@ const PORT = process.env.PORT || 5000;
     });
 })();
 
-process.on('SIGTERM', () => {
-    connection.disconnect();
-    server.close(() => {
+process.on('SIGINT', async () => {
+    mongoose.connection.close().then(() => {
         console.log('server closed');
         process.exit(1);
     });
