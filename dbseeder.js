@@ -16,9 +16,9 @@ const { generateRandomValues } = require('./utils/stock_logic');
 generateRandomValues(100);
 connect_db().then(async () => {
     const applejsonArray = generateRandomValues(130);
-    const microsoftjsonArray = generateRandomValues(189);
-    const ciscojsonArray = generateRandomValues(50);
-    const starbucksjsonArray = generateRandomValues(30);
+    const microsoftjsonArray = generateRandomValues(126);
+    const ciscojsonArray = generateRandomValues(150);
+    const starbucksjsonArray = generateRandomValues(190);
 
     await Apple.create(applejsonArray);
     console.log('added apple');
