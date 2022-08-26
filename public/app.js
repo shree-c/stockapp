@@ -1,13 +1,17 @@
+import * as d3 from 'd3';
 const buts = document.querySelectorAll('.but');
-console.log(buts);
 for (let i = 0; i < buts.length; i++) {
     buts[i].addEventListener('click', async (e) => {
-        console.log(e.target.innerHTML);
         document.querySelector('#bar-chart').innerHTML = '';
+        document.querySelector('#stk').innerText = e.target.innerText;
         await drawChart(e.target.innerText);
     });
 }
 
+const svgW = 800, svgH = 400, svgMargin = 50;
+const svgE = d3.select('#bar-chart')
+    .attr('width', svgW)
+    .attr('height', svgH);
 function drawChart(company) {
     fetch('/api/v1', {
         method: 'POST',
@@ -18,14 +22,10 @@ function drawChart(company) {
             company
         })
     }).then((data) => data.json()).then((vals) => {
-        vals.data = vals.data.reverse();
+        vals.data = vals.data;
         vals.data = vals.data.map((v) => {
             return { Date: new Date(v.Date), Value: v.Value };
         });
-        const svgW = 800, svgH = 400, svgMargin = 50;
-        const svgE = d3.select('#bar-chart')
-            .attr('width', svgW)
-            .attr('height', svgH);
         const data1 = vals.data.map((v) => v.Value), numV = vals.data.length;
         const dates = vals.data.map((v) => new Date(v.Date));
         const yScale = d3.scaleLinear()
@@ -51,7 +51,6 @@ function drawChart(company) {
             .attr('transform', `translate(${svgMargin}, ${10})`)
             .call(yAxis);
         //adding line
-        console.log(vals.data, '-->');
         svgE.append("path")
             .datum(vals.data)
             .attr("fill", "none")

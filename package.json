@@ -5,15 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon index.js"
+    "watch": "npx webpack && nodemon index.js",
+    "start": "node index.js"
   },
   "author": "shree",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
     "csvtojson": "^2.0.10",
+    "d3": "^7.6.1",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongoose": "^6.5.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   }
 }
