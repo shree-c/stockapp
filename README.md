@@ -7,12 +7,12 @@ _clone this repo and cd into the folder_
 Run:
 `npm install`
 
-Set environment variables in config/config.env
+#### Set environment variables in config/config.env
 `PORT` _port you want the server to run on_
 `NODE_ENV` : _'development' or 'production'_
 `MONGO_U` : _url to your mongodb instance_
 
-Setup:
+#### Setup:
 Run this to generate random stock values
 `node dbseeder.js`
 Run this to delete values in database
@@ -22,7 +22,7 @@ To start the app run
 `npm run watch`
 
 
-Screenshots:camera: :
+#### Screenshots:camera: :
 ![opening](readmeimages/opening.png)
 
 ![working](readmeimages/working.png)
