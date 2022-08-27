@@ -22,9 +22,9 @@ To start the app run
 
 
 Screenshots:camera: :
-![opening](assets/opening.png)
+![opening](readmeimages/opening.png)
 
-![working](assets/working.png)
+![working](readmeimages/working.png)
 
 ### How the app works
 #### Api
