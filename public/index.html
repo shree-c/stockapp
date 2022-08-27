@@ -11,10 +11,29 @@
 
 <body>
     <h3>Stonks</h3>
-    <button class="but">apple</button>
-    <button class="but">microsoft</button>
-    <button class="but">cisco</button>
-    <button class="but">starbucks</button>
+    <div>
+        <button class="but">apple</button>
+        <button class="but">microsoft</button>
+        <button class="but">cisco</button>
+        <button class="but">starbucks</button>
+    </div>
+    <br>
+    <div class="con">
+        <span>Company: </span>
+        <span id="stk"></span>
+        <br>
+        <button class="tf" id="7">week</button>
+        <button class="tf" id="30">month</button>
+        <button class="tf" id="2">day</button>
+        <button class="tf" id="365">year</button>
+        <br>
+        <span>Time span: </span>
+        <span id="stf">year</span>
+        <br>
+        <p>press go to change time frame</p>
+        <span>time frame: </span>
+        <button id="go">go</button>
+    </div>
     <p id="stk">press one of the buttons to fetch data</p>
     <svg id="bar-chart">
     </svg>

@@ -2,3 +2,7 @@
     outline: 2px solid blue;
     background-color: aquamarine;
 }
+
+.con {
+    display: none;
+}
