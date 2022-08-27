@@ -1,7 +1,8 @@
 # stonks :rocket:
 ### Build instructions :tools:
 _clone this repo and cd into the folder_
-`git clone --depth 1 *url*_
+`git clone --depth 1 *url*
+
 Run:
 `npm install`
 
@@ -21,8 +22,9 @@ To start the app run
 
 
 Screenshots:camera: :
-![opening][/assets/opening.png]
-![working][/assets/working.png]
+![opening](assets/opening.png)
+
+![working](assets/working.png)
 
 ### How the app works
 #### Api
