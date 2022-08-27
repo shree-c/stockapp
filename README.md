@@ -32,8 +32,8 @@ _endpoint_ : <url>/api/v1/
 _method_ : POST
 _body_ : {
     company: <companyname>
-    frm: <from date>
-    to: <to date>
+    frm: _from date_
+    to: _to date_
 }
 
 
