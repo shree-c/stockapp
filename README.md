@@ -1,5 +1,6 @@
+![version badge](https://img.shields.io/github/v/release/shree-c/stockapp?include_prereleases)
 # stonks :rocket:
-### Build instructions :tools:
+### Build instructions :hammer_and_wrench:
 _clone this repo and cd into the folder_
 `git clone --depth 1 *url*
 
@@ -30,11 +31,12 @@ Screenshots:camera: :
 #### Api
 _endpoint_ : <url>/api/v1/
 _method_ : POST
-_body_ : {
+_body_ : ```
+{
     company: <companyname>
-    frm: _from date_
-    to: _to date_
-}
+    frm: "2022-02-01"
+    to: "2022-03-01"
+}```
 
 
 #### App
