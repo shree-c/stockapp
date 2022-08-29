@@ -5,14 +5,15 @@ _clone this repo and cd into the folder_
 `git clone --depth 1 *url*
 
 Run:
+
 `npm install`
 
 #### Set environment variables in config/config.env
-`PORT` _port you want the server to run on_
-
-`NODE_ENV` : _'development' or 'production'_
-
-`MONGO_U` : _url to your mongodb instance_
+| variable   | value                                |
+| ---------- | ------------------------------------ |
+| `PORT`     | _port you want the server to run on_ |
+| `NODE_ENV` | _'development' or 'production'_      |
+| `MONGO_U`  | _url to your mongodb instance_       |
 
 #### Setup:
 Run this to generate random stock values
