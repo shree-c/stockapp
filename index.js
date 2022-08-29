@@ -21,7 +21,7 @@ app.get('/csv', (req, res) => {
 const PORT = process.env.PORT || 5000;
 (async function () {
     await connect_db();
-    const server = app.listen(PORT, () => console.log(`listening at ${PORT} env: ${process.env.NODE_ENV}`.yellow.italic.underline));
+    const server = app.listen(PORT, () => console.log(`listening at ${PORT} env: ${process.env.NODE_ENV} -> http://localhost:${PORT}`.yellow.italic.underline));
 
     process.on('unhandledRejection', async (err) => {
         console.log(`${err.message}`.red);

@@ -9,17 +9,25 @@ Run:
 
 #### Set environment variables in config/config.env
 `PORT` _port you want the server to run on_
+
 `NODE_ENV` : _'development' or 'production'_
+
 `MONGO_U` : _url to your mongodb instance_
 
 #### Setup:
 Run this to generate random stock values
+
 `node dbseeder.js`
+
 Run this to delete values in database
+
 `node dbdelete.js`
 
 To start the app run
-`npm run watch`
+
+`npm run start`
+
+Open the browser and go to : http://localhost:_your defined port number_
 
 
 #### Screenshots:camera: :
