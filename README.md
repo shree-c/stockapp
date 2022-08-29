@@ -2,7 +2,8 @@
 # stonks :rocket:
 ### Build instructions :hammer_and_wrench:
 _clone this repo and cd into the folder_
-`git clone --depth 1 *url*
+
+`git clone --depth 1 *url*`
 
 Run:
 
